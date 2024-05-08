@@ -14,8 +14,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
        FirstFragment firstFragment= FirstFragment.newInstance();
        SECANDFragment secandFragment=SECANDFragment.newInstance();
+       Bundle args = new Bundle();
+       args.putString("TEST","FRAG1");
+       firstFragment.setArguments(args);
         Button fragOneButn= findViewById(R.id.button);
         Button fragTowButn= findViewById(R.id.button2);
+        getSupportFragmentManager().beginTransaction().replace(R.id.button,firstFragment).commit();
+
 
 
         fragOneButn.setOnClickListener(new View.OnClickListener() {

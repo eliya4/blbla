@@ -45,9 +45,14 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_first, container, false);
-        TextView tv = view.findViewById(R.id.frag11);
-        tv.setText("Hello 1");
+        if(getArguments()!=null) {
+            TextView tv = view.findViewById(R.id.frag11);
+            Bundle args = getArguments();
+            String text = args.getString("Test","dif");
+
+        }
         return view;
 
     }
